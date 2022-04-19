@@ -8,18 +8,22 @@
 import UIKit
 import SnapKit
 
-class InfoTableViewCell: UITableViewCell, SettableCell {
-    private var infoLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)
-        label.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
-        return label
+//MARK: - Each option cell has text and corresponding icon. Just setting them.
+
+class OptionTableViewCell: UITableViewCell, SettableCell {
+    
+    private var optionTextLabel: UILabel = {
+        let optionTextLabel = UILabel()
+        optionTextLabel.textColor = .customBlue
+        optionTextLabel.font = .mainCustomFont(.semibold, size: 17)
+        return optionTextLabel
     }()
+    
     private var iconView: UIImageView = {
-        let imageV = UIImageView()
-        imageV.tintColor = .systemGray
-        imageV.contentMode = .scaleAspectFit
-        return imageV
+        let iconView = UIImageView()
+        iconView.tintColor = .systemGray
+        iconView.contentMode = .scaleAspectFit
+        return iconView
     }()
     
     override func layoutSubviews() {
@@ -29,22 +33,20 @@ class InfoTableViewCell: UITableViewCell, SettableCell {
             make.centerY.equalToSuperview()
             make.size.equalTo(30)
         }
-        contentView.addSubview(infoLabel)
-        infoLabel.snp.makeConstraints { make in
+        contentView.addSubview(optionTextLabel)
+        optionTextLabel.snp.makeConstraints { make in
             make.leading.equalTo(iconView.snp.trailing).offset(8)
             make.centerY.equalToSuperview()
         }
     }
     
     //Conform to be Settable
-    typealias TypeOfData = Info
+    typealias TypeOfData = Option
 
-    static var height: Double {
-        return 44
-    }
+    static var heightOfCell: Double { 44 }
     
-    func configure(with data: Info) {
-        infoLabel.text = data.info
-        iconView.image = UIImage(systemName: data.imageName)
+    func configure(with data: Option) {
+        optionTextLabel.text = data.text
+        iconView.image = UIImage(systemName: data.iconName)
     }
 }

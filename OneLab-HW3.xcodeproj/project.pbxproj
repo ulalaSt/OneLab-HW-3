@@ -18,7 +18,6 @@
 		CE168F15280B50DA00F5CF9B /* MyPinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */; };
 		CE168F17280B50EA00F5CF9B /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */; };
 		CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */; };
-		CE168F1C280B5D8300F5CF9B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F1B280B5D8300F5CF9B /* Models.swift */; };
 		CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */; };
 		CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */; };
 		CE168F32280C434B00F5CF9B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */; };
@@ -28,11 +27,16 @@
 		CE168F49280CBB8000F5CF9B /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */; };
 		CE168F4B280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4A280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift */; };
 		CE168F4D280D721500F5CF9B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */; };
-		CE168F4F280D732200F5CF9B /* Cell Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4E280D732200F5CF9B /* Cell Configurator.swift */; };
+		CE168F4F280D732200F5CF9B /* TableViewCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4E280D732200F5CF9B /* TableViewCellConfigurator.swift */; };
 		CE168F5B280E147600F5CF9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE168F5D280E147600F5CF9B /* Localizable.strings */; };
 		CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F5F280E200C00F5CF9B /* Settable Cell.swift */; };
-		CE168F62280E202100F5CF9B /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F61280E202100F5CF9B /* Configurator.swift */; };
+		CE168F62280E202100F5CF9B /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F61280E202100F5CF9B /* CellConfigurator.swift */; };
 		CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */; };
+		CE168F8F280F0CE600F5CF9B /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F8E280F0CE600F5CF9B /* TableSection.swift */; };
+		CE168F91280F0DA600F5CF9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F90280F0DA600F5CF9B /* User.swift */; };
+		CE168F93280F0E3300F5CF9B /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F92280F0E3300F5CF9B /* Option.swift */; };
+		CE168F95280F45FF00F5CF9B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F94280F45FF00F5CF9B /* UIColor + Extensions.swift */; };
+		CE168F98280F4DF400F5CF9B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F97280F4DF400F5CF9B /* UIFont + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +53,6 @@
 		CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPinsViewController.swift; sourceTree = "<group>"; };
 		CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
-		CE168F1B280B5D8300F5CF9B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewModel.swift; sourceTree = "<group>"; };
 		CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -59,12 +62,17 @@
 		CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		CE168F4A280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendsViewModel.swift; sourceTree = "<group>"; };
 		CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		CE168F4E280D732200F5CF9B /* Cell Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell Configurator.swift"; sourceTree = "<group>"; };
+		CE168F4E280D732200F5CF9B /* TableViewCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellConfigurator.swift; sourceTree = "<group>"; };
 		CE168F5C280E147600F5CF9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE168F5E280E148500F5CF9B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE168F5F280E200C00F5CF9B /* Settable Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settable Cell.swift"; sourceTree = "<group>"; };
-		CE168F61280E202100F5CF9B /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		CE168F61280E202100F5CF9B /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 		CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		CE168F8E280F0CE600F5CF9B /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		CE168F90280F0DA600F5CF9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE168F92280F0E3300F5CF9B /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		CE168F94280F45FF00F5CF9B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		CE168F97280F4DF400F5CF9B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		DA54C022E9077DF9A3AC5378 /* Pods_OneLab_HW3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneLab_HW3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E889A75E25C8C934286F972A /* Pods-OneLab-HW3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneLab-HW3.debug.xcconfig"; path = "Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,14 +127,14 @@
 		CE168EFA280B4D5E00F5CF9B /* OneLab-HW3 */ = {
 			isa = PBXGroup;
 			children = (
-				CE168EFB280B4D5E00F5CF9B /* AppDelegate.swift */,
-				CE168EFD280B4D5E00F5CF9B /* SceneDelegate.swift */,
+				CE168F8D280EE26600F5CF9B /* AppDelegates */,
 				CE168F18280B50F400F5CF9B /* ViewControllers */,
 				CE168F1E280B5D9900F5CF9B /* ViewModels */,
 				CE168F1D280B5D8F00F5CF9B /* Models */,
 				CE168F1F280B600C00F5CF9B /* Cell */,
 				CE168F67280E339400F5CF9B /* Cell ViewModels */,
 				CE168F64280E203400F5CF9B /* Cell Configurator */,
+				CE168F96280F460600F5CF9B /* Extensions */,
 				CE168F2A280C407B00F5CF9B /* Fonts */,
 				CE168F58280E143200F5CF9B /* Localizable string */,
 				CE168F07280B4D6100F5CF9B /* Assets.xcassets */,
@@ -151,7 +159,9 @@
 		CE168F1D280B5D8F00F5CF9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE168F1B280B5D8300F5CF9B /* Models.swift */,
+				CE168F90280F0DA600F5CF9B /* User.swift */,
+				CE168F92280F0E3300F5CF9B /* Option.swift */,
+				CE168F8E280F0CE600F5CF9B /* TableSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				CE168F5F280E200C00F5CF9B /* Settable Cell.swift */,
-				CE168F61280E202100F5CF9B /* Configurator.swift */,
-				CE168F4E280D732200F5CF9B /* Cell Configurator.swift */,
+				CE168F61280E202100F5CF9B /* CellConfigurator.swift */,
+				CE168F4E280D732200F5CF9B /* TableViewCellConfigurator.swift */,
 			);
 			path = "Cell Configurator";
 			sourceTree = "<group>";
@@ -243,6 +253,24 @@
 				CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */,
 			);
 			path = "Cell ViewModels";
+			sourceTree = "<group>";
+		};
+		CE168F8D280EE26600F5CF9B /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				CE168EFB280B4D5E00F5CF9B /* AppDelegate.swift */,
+				CE168EFD280B4D5E00F5CF9B /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		CE168F96280F460600F5CF9B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F94280F45FF00F5CF9B /* UIColor + Extensions.swift */,
+				CE168F97280F4DF400F5CF9B /* UIFont + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,22 +394,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE168F00280B4D5E00F5CF9B /* MyFriendsViewController.swift in Sources */,
-				CE168F62280E202100F5CF9B /* Configurator.swift in Sources */,
+				CE168F62280E202100F5CF9B /* CellConfigurator.swift in Sources */,
 				CE168F06280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld in Sources */,
 				CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */,
 				CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */,
 				CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */,
 				CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */,
 				CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */,
+				CE168F91280F0DA600F5CF9B /* User.swift in Sources */,
 				CE168F17280B50EA00F5CF9B /* MyProfileViewController.swift in Sources */,
 				CE168F4D280D721500F5CF9B /* UserTableViewCell.swift in Sources */,
 				CE168F15280B50DA00F5CF9B /* MyPinsViewController.swift in Sources */,
 				CE168F13280B50CC00F5CF9B /* MyFeedViewController.swift in Sources */,
 				CE168F49280CBB8000F5CF9B /* InfoTableViewCell.swift in Sources */,
-				CE168F1C280B5D8300F5CF9B /* Models.swift in Sources */,
+				CE168F8F280F0CE600F5CF9B /* TableSection.swift in Sources */,
+				CE168F93280F0E3300F5CF9B /* Option.swift in Sources */,
+				CE168F98280F4DF400F5CF9B /* UIFont + Extensions.swift in Sources */,
 				CE168EFC280B4D5E00F5CF9B /* AppDelegate.swift in Sources */,
+				CE168F95280F45FF00F5CF9B /* UIColor + Extensions.swift in Sources */,
 				CE168F4B280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift in Sources */,
-				CE168F4F280D732200F5CF9B /* Cell Configurator.swift in Sources */,
+				CE168F4F280D732200F5CF9B /* TableViewCellConfigurator.swift in Sources */,
 				CE168EFE280B4D5E00F5CF9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

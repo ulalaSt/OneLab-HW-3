@@ -1,14 +1,8 @@
-//
-//  Configurator.swift
-//  OneLab-HW3
-//
-//  Created by user on 18.04.2022.
-//
 
 import Foundation
 import UIKit
 
-class CellConfigurator<CellType: SettableCell, DataType>: Configurator where CellType.TypeOfData == DataType, CellType: UITableViewCell {
+class TableViewCellConfigurator<CellType: SettableCell, DataType>: CellConfigurator where CellType.TypeOfData == DataType, CellType: UITableViewCell {
     
     static var reuseID: String {
         return String(describing: CellType.self)
@@ -18,8 +12,8 @@ class CellConfigurator<CellType: SettableCell, DataType>: Configurator where Cel
         return CellType.self
     }
     
-    static var height: Double {
-        return CellType.height
+    static var heightOfCell: Double {
+        return CellType.heightOfCell
     }
     
     let item: DataType

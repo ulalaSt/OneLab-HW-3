@@ -9,6 +9,6 @@ import Foundation
 
 protocol SettableCell {
     associatedtype TypeOfData
-    static var height: Double {get}
+    static var heightOfCell: Double {get}
     func configure(with data: TypeOfData)
 }

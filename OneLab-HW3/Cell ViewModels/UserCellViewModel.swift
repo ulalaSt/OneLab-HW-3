@@ -9,9 +9,9 @@ import Foundation
 
 class UserCellViewModel {
     
-    var isAdded: Bool!
+    var isAddedToFriends: Bool!
     
-    func addTapped() {
-        self.isAdded = !isAdded
+    func didTapAddToFriends() {
+        self.isAddedToFriends = !isAddedToFriends
     }
 }

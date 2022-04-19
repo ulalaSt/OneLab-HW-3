@@ -8,176 +8,187 @@
 import Foundation
 import UIKit
 
-//MARK: - Main UI's
+//MARK: - Each user cell has nickname, status icon, image, friends count, and Add to friends button. Conforming them and configuring action when the Add button tapped.
+
 class UserTableViewCell: UITableViewCell {
-    private var userNickname: UILabel = {
-        let label = UILabel()
-        label.isUserInteractionEnabled = true
-        label.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
-        return label
-    }()
-    private var statusIcon: UIView = {
-        let view = UIView()
-        view.clipsToBounds = true
-        view.layer.borderColor = UIColor(named: "MyFriendsCellColor")!.cgColor
-        view.layer.borderWidth = 2
-        return view
-    }()
-    private var userImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.contentMode = .scaleAspectFill
-        imageV.clipsToBounds = true
-        return imageV
-    }()
-    private var friendsCount: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemGray
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 13)
-        return label
-    }()
-    private let addButton: UIStackView = {
-        let stackView = UIStackView()
-        stackView.alignment = .center
-        stackView.axis = .horizontal
-        stackView.layer.borderWidth = 2
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.spacing = 2
-        return stackView
-    }()
-    private let addLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Semibold", size: 14)
-        return label
-    }()
-    private let addImage: UIImageView = {
-        let imageV = UIImageView()
-        imageV.contentMode = .scaleAspectFit
-        return imageV
-    }()
     
     private let viewModel = UserCellViewModel()
     
+    private var userNickname: UILabel = {
+        let userNickname = UILabel()
+        userNickname.isUserInteractionEnabled = true
+        userNickname.font = .mainCustomFont(.semibold, size: 17)
+        return userNickname
+    }()
+    private var userStatusIcon: UIView = {
+        let userStatusIcon = UIView()
+        userStatusIcon.clipsToBounds = true
+        userStatusIcon.layer.borderColor = UIColor.whiteToBlack.cgColor
+        userStatusIcon.layer.borderWidth = 2
+        return userStatusIcon
+    }()
+    private var userImageView: UIImageView = {
+        let userImageView = UIImageView()
+        userImageView.contentMode = .scaleAspectFill
+        userImageView.clipsToBounds = true
+        return userImageView
+    }()
+    private var userFriendsLabel: UILabel = {
+        let userFriendsLabel = UILabel()
+        userFriendsLabel.textColor = .systemGray
+        userFriendsLabel.font = .mainCustomFont(.regular, size: 13)
+        return userFriendsLabel
+    }()
+    private let addToFriendsButton: UIStackView = {
+        let addToFriendsButton = UIStackView()
+        addToFriendsButton.alignment = .center
+        addToFriendsButton.axis = .horizontal
+        addToFriendsButton.layer.borderWidth = 2
+        addToFriendsButton.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        addToFriendsButton.isLayoutMarginsRelativeArrangement = true
+        addToFriendsButton.spacing = 2
+        return addToFriendsButton
+    }()
+    private let addLabel: UILabel = {
+        let addLabel = UILabel()
+        addLabel.font = .mainCustomFont(.semibold, size: 14)
+        return addLabel
+    }()
+    private let addIcon: UIImageView = {
+        let addIcon = UIImageView()
+        addIcon.contentMode = .scaleAspectFit
+        return addIcon
+    }()
+    
     override func layoutSubviews() {
-        contentView.addSubview(userImage)
-        userImage.snp.makeConstraints { make in
+        contentView.addSubview(userImageView)
+        userImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
             make.centerY.equalToSuperview()
-            make.size.equalTo(48)
+            make.size.equalTo(contentView.snp.height).dividedBy(1.5)
         }
-        contentView.addSubview(statusIcon)
-        statusIcon.snp.makeConstraints { make in
-            make.size.equalTo(17)
-            make.bottom.trailing.equalTo(userImage)
+        contentView.addSubview(userStatusIcon)
+        userStatusIcon.snp.makeConstraints { make in
+            make.size.equalTo(userImageView).dividedBy(2.5)
+            make.bottom.trailing.equalTo(userImageView)
         }
         contentView.addSubview(userNickname)
         userNickname.snp.makeConstraints { make in
-            make.top.equalTo(userImage)
-            make.leading.equalTo(userImage.snp.trailing).offset(12)
-            make.height.equalTo(userImage.snp.height).dividedBy(2)
+            make.top.equalTo(userImageView)
+            make.leading.equalTo(userImageView.snp.trailing).offset(12)
+            make.height.equalTo(userImageView).dividedBy(2)
         }
-        contentView.addSubview(friendsCount)
-        friendsCount.snp.makeConstraints { make in
+        contentView.addSubview(userFriendsLabel)
+        userFriendsLabel.snp.makeConstraints { make in
             make.leading.equalTo(userNickname)
             make.top.equalTo(userNickname.snp.bottom)
-            make.bottom.equalTo(userImage.snp.bottom)
+            make.bottom.equalTo(userImageView)
         }
-        contentView.addSubview(addButton)
-        addButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addTapped)))
-        addButton.snp.makeConstraints { make in
+        contentView.addSubview(addToFriendsButton)
+        addToFriendsButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(16)
             make.centerY.equalToSuperview()
         }
         
-        addButton.addArrangedSubview(addImage)
-        addImage.snp.makeConstraints { make in
+        addToFriendsButton.addArrangedSubview(addIcon)
+        addIcon.snp.makeConstraints { make in
             make.size.equalTo(14)
-            make.bottom.equalToSuperview().inset(10)
-            make.top.equalToSuperview().inset(10)
+            make.bottom.top.equalToSuperview().inset(10)
         }
         
-        addButton.addArrangedSubview(addLabel)
+        addToFriendsButton.addArrangedSubview(addLabel)
+        addToFriendsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapAddToFriends)))
         
         DispatchQueue.main.async {
-            self.addButton.layer.cornerRadius = self.addButton.frame.height/2
-            self.userImage.layer.cornerRadius = self.userImage.frame.width/2
-            self.statusIcon.layer.cornerRadius = self.statusIcon.frame.height/2
+            self.addToFriendsButton.layer.cornerRadius = self.addToFriendsButton.frame.height/2
+            self.userImageView.layer.cornerRadius = self.userImageView.frame.width/2
+            self.userStatusIcon.layer.cornerRadius = self.userStatusIcon.frame.height/2
         }
     }
     
-    @objc func addTapped() {
-        viewModel.addTapped()
-        checkAdded(isAdded: viewModel.isAdded)
+    @objc func didTapAddToFriends() {
+        viewModel.didTapAddToFriends()
+        updateAddToFriendsButton(viewModel.isAddedToFriends)
     }
     
+    func updateAddToFriendsButton(_ isAdded: Bool){
+        if isAdded {
+            addToFriendsButton.backgroundColor = UIColor(white: 1, alpha: 0)
+            addToFriendsButton.layer.borderColor = UIColor.customBlue.cgColor
+            addLabel.textColor = .customBlue
+            addIcon.tintColor = .customBlue
+            addLabel.text = String(localized: "ADD")
+            addIcon.image = UIImage(systemName: "plus.circle.fill")
+        } else {
+            addToFriendsButton.backgroundColor = UIColor.transparentToDark
+            addToFriendsButton.layer.borderColor = UIColor.grayToTransparent.cgColor
+            addLabel.textColor = .systemGray
+            addIcon.tintColor = .systemGray
+            addLabel.text = String(localized: "ADDED")
+            addIcon.image = UIImage(systemName: "checkmark.circle.fill")
+        }
+    }
 }
 
 //MARK: - Conformance to SettableCell
 extension UserTableViewCell: SettableCell {
+    
     typealias TypeOfData = User
     
-    static var height: Double {return 72}
-
+    static var heightOfCell: Double { 72 }
+    
     func configure(with data: User) {
-        userNickname.text = data.nickName
-        userImage.image = UIImage(named: data.imageName)
         
-        viewModel.isAdded = data.isYourFriend
-        checkAdded(isAdded: data.isYourFriend)
-
-        if data.friends!<4000 {
-            friendsCount.text = "\(data.friends!) "+String(localized: "Friends")
-        } else {
-            let number = data.friends!
-            let first = number / 1000
-            let second = (number % 1000)/100
-            if second != 0 {
-                friendsCount.text = "\(first).\(second)K "+String(localized: "Friends")
-            } else {
-                friendsCount.text = "\(first)K "+String(localized: "Friends")
-            }
+        userNickname.text = data.nickName
+        userImageView.image = UIImage(named: data.imageName)
+        viewModel.isAddedToFriends = data.isYourFriend
+        updateAddToFriendsButton(data.isYourFriend)
+        userStatusIcon.backgroundColor = .appropriateColor(of: data.status)
+        userFriendsLabel.text = friendsLabelCreator(from: data.numberOfFriends)
+        
+    }
+    
+    private func friendsLabelCreator(from number: Int) -> String {
+        
+        if number < 4000 {
+            // Example output: "3999 Friends", "234 Friends"
+            return smallNumberToFriendsLabel(from: number)
         }
         
-        switch data.status {
-        case .online:
-            statusIcon.backgroundColor = UIColor(red: 0.204, green: 0.78, blue: 0.349, alpha: 1)
-        case .recent:
-            statusIcon.backgroundColor = UIColor(red: 1, green: 0.8, blue: 0, alpha: 1)
-        case .offline:
-            statusIcon.backgroundColor = UIColor(named: "MyFriendsBackground")
+        // Example output: "12.4K Friends", "120K Friends"
+        return largeNumberToFriendsLabel(from: number)
+    }
+    
+    private func smallNumberToFriendsLabel(from number: Int) -> String {
+        return "\(number) "+String(localized: "Friends")
+    }
+    
+    private func largeNumberToFriendsLabel(from number: Int) -> String{
+        let numberBeforeDot = number / 1000
+        let numberAfterDot = (number % 1000)/100
+        if numberAfterDot != 0 {
+            return "\(numberBeforeDot).\(numberAfterDot)K "+String(localized: "Friends")
+        } else {
+            return "\(numberBeforeDot)K "+String(localized: "Friends")
         }
     }
     
-    func checkAdded(isAdded: Bool){
-        if isAdded {
-            addButton.layer.borderColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1).cgColor
-            addButton.backgroundColor = UIColor(white: 1, alpha: 0)
-            addLabel.text = String(localized: "ADD")
-            addLabel.textColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)
-            addImage.image = UIImage(systemName: "plus.circle.fill")
-            addImage.tintColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)
-        } else {
-            addButton.layer.borderColor = UIColor(named: "AddIconBorder")!.cgColor
-            addButton.backgroundColor = UIColor(named: "AddIconFill")
-            addLabel.text = String(localized: "ADDED")
-            addLabel.textColor = .systemGray
-            addImage.image = UIImage(systemName: "checkmark.circle.fill")
-            addImage.tintColor = .systemGray
-        }
-    }
-
 }
 
 //MARK: - Modifies CG Colors when Interface mode (Light Mode/Dark Mode) changes
+
 extension UserTableViewCell {
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         updateCG()
     }
+    
     func updateCG(){
-        if !viewModel.isAdded {
-            addButton.layer.borderColor = UIColor(named: "AddIconBorder")!.cgColor
+        if !viewModel.isAddedToFriends {
+            addToFriendsButton.layer.borderColor = UIColor.grayToTransparent.cgColor
         }
-        statusIcon.layer.borderColor = UIColor(named: "MyFriendsCellColor")!.cgColor
+        userStatusIcon.layer.borderColor = UIColor.whiteToBlack.cgColor
     }
+    
 }

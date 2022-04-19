@@ -8,33 +8,35 @@
 import UIKit
 import SnapKit
 
+//MARK: - Each item cell has image, name, position(job), status icon. Just adding them.
+
 class MyFriendsCollectionViewCell: UICollectionViewCell {
     
     static var identifier = "MyFriendsCollectionViewCell"
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        return imageView
+    private let userImageView: UIImageView = {
+        let userImageView = UIImageView()
+        userImageView.contentMode = .scaleAspectFill
+        userImageView.clipsToBounds = true
+        return userImageView
     }()
-    private let name: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 21)
-        return label
+    private let userNameLabel: UILabel = {
+        let userNameLabel = UILabel()
+        userNameLabel.font = .mainCustomFont(.regular, size: 21)
+        return userNameLabel
     }()
-    private let position: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 16)
-        label.textColor = .systemGray
-        return label
+    private let userPositionLabel: UILabel = {
+        let userPositionLabel = UILabel()
+        userPositionLabel.numberOfLines = 0
+        userPositionLabel.textAlignment = .center
+        userPositionLabel.font = .mainCustomFont(.regular, size: 16)
+        userPositionLabel.textColor = .systemGray
+        return userPositionLabel
     }()
-    private let statusView: UIView = {
-        let view = UIView()
-        view.clipsToBounds = true
-        return view
+    private let userStatusIcon: UIView = {
+        let userStatusIcon = UIView()
+        userStatusIcon.clipsToBounds = true
+        return userStatusIcon
     }()
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -46,7 +48,7 @@ class MyFriendsCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = UIColor(named: "MyFriendsCellColor")
+        contentView.backgroundColor = UIColor.whiteToBlack
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 15
     }
@@ -58,55 +60,46 @@ class MyFriendsCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
+        contentView.addSubview(userImageView)
+        userImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(16)
             make.centerX.equalToSuperview()
             make.height.equalToSuperview().dividedBy(2)
-            make.width.equalTo(imageView.snp.height)
+            make.width.equalTo(userImageView.snp.height)
         }
         
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(15)
+            make.top.equalTo(userImageView.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
         
-        stackView.addArrangedSubview(statusView)
-        statusView.snp.makeConstraints { make in
+        stackView.addArrangedSubview(userStatusIcon)
+        userStatusIcon.snp.makeConstraints { make in
             make.size.equalTo(10)
         }
         
-        stackView.addArrangedSubview(name)
-        name.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(15)
+        stackView.addArrangedSubview(userNameLabel)
+        userNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(userImageView.snp.bottom).offset(15)
         }
         
-        contentView.addSubview(position)
-        position.snp.makeConstraints { make in
-            make.top.equalTo(name.snp.bottom).offset(4)
+        contentView.addSubview(userPositionLabel)
+        userPositionLabel.snp.makeConstraints { make in
+            make.top.equalTo(userNameLabel.snp.bottom).offset(4)
             make.leading.trailing.equalToSuperview()
             make.bottom.lessThanOrEqualToSuperview()
         }
         
         DispatchQueue.main.async {
-            self.imageView.layer.cornerRadius = self.imageView.frame.height/2
-            self.statusView.layer.cornerRadius = self.statusView.frame.height/2
+            self.userImageView.layer.cornerRadius = self.userImageView.frame.height/2
+            self.userStatusIcon.layer.cornerRadius = self.userStatusIcon.frame.height/2
         }
     }
     public func configure(user: User) {
-        
-        self.name.text = user.name
-        self.position.text = user.position
-        self.imageView.image = UIImage(named: user.imageName)
-        
-        switch user.status {
-        case .online:
-            self.statusView.backgroundColor = UIColor(red: 0.204, green: 0.78, blue: 0.349, alpha: 1)
-        case .recent:
-            self.statusView.backgroundColor = UIColor(red: 1, green: 0.8, blue: 0, alpha: 1)
-        case .offline:
-            self.statusView.backgroundColor = UIColor(named: "MyFriendsBackground")
-        }
+        userNameLabel.text = user.name
+        userPositionLabel.text = user.position
+        userImageView.image = UIImage(named: user.imageName)
+        userStatusIcon.backgroundColor = .appropriateColor(of: user.status)
     }
 }

@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  OneLab-HW3
+
+  Created by user on 19.04.2022.
+  
+*/
+"My Feed" = "Моя Лента";
+"My Friends" = "Мои Друзья";
+"My Pins" = "Мои Пины";
+"My Profile" = "Мой Профайл";
+"Add New Friend" = "Добавить Нового Друга";
+
+"Business magnate" = "Бизнес-Магнат";
+"Software Engineer" = "Программист";
+"CEO" = "Генеральный Директор";
+"Ex-President" = "Экс-Президент";
+"Engineer" = "Инженер";
+"Entrepreneur" = "Предприниматель";
+"Investor" = "Инвестор";
+
+"Add New Contacts" = "Добавить Новые Контакты";
+"From Contacts" = "Из Контактов";
+"By Username" = "По Имени Пользователя";
+"By Phone Number" = "По Номеру Телефона";
+"You Might Know Them" = "Вы Можете Их Знать";
+
+"Friends" = "Друзей";
+
+"ADD" = "ДОБАВИТЬ";
+"ADDED" = "ДОБАВЛЕН";

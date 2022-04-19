@@ -7,25 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		429795E4A6B49E830F64BFA9 /* Pods_OneLab_HW3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA54C022E9077DF9A3AC5378 /* Pods_OneLab_HW3.framework */; };
 		CE168EFC280B4D5E00F5CF9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168EFB280B4D5E00F5CF9B /* AppDelegate.swift */; };
 		CE168EFE280B4D5E00F5CF9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168EFD280B4D5E00F5CF9B /* SceneDelegate.swift */; };
-		CE168F00280B4D5E00F5CF9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168EFF280B4D5E00F5CF9B /* ViewController.swift */; };
-		CE168F03280B4D5E00F5CF9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE168F01280B4D5E00F5CF9B /* Main.storyboard */; };
+		CE168F00280B4D5E00F5CF9B /* MyFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168EFF280B4D5E00F5CF9B /* MyFriendsViewController.swift */; };
 		CE168F06280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE168F04280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld */; };
 		CE168F08280B4D6100F5CF9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE168F07280B4D6100F5CF9B /* Assets.xcassets */; };
 		CE168F0B280B4D6100F5CF9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE168F09280B4D6100F5CF9B /* LaunchScreen.storyboard */; };
+		CE168F13280B50CC00F5CF9B /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F12280B50CC00F5CF9B /* MyFeedViewController.swift */; };
+		CE168F15280B50DA00F5CF9B /* MyPinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */; };
+		CE168F17280B50EA00F5CF9B /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */; };
+		CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */; };
+		CE168F1C280B5D8300F5CF9B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F1B280B5D8300F5CF9B /* Models.swift */; };
+		CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */; };
+		CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */; };
+		CE168F32280C434B00F5CF9B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */; };
+		CE168F3A280C477C00F5CF9B /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F39280C477C00F5CF9B /* SF-Pro-Display-Regular.otf */; };
+		CE168F3E280C4D8E00F5CF9B /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F3D280C4D8E00F5CF9B /* SF-Pro-Display-Bold.otf */; };
+		CE168F40280C4D9C00F5CF9B /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F3F280C4D9C00F5CF9B /* SF-Pro-Display-Semibold.otf */; };
+		CE168F49280CBB8000F5CF9B /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */; };
+		CE168F4B280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4A280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift */; };
+		CE168F4D280D721500F5CF9B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */; };
+		CE168F4F280D732200F5CF9B /* Cell Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F4E280D732200F5CF9B /* Cell Configurator.swift */; };
+		CE168F5B280E147600F5CF9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE168F5D280E147600F5CF9B /* Localizable.strings */; };
+		CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F5F280E200C00F5CF9B /* Settable Cell.swift */; };
+		CE168F62280E202100F5CF9B /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F61280E202100F5CF9B /* Configurator.swift */; };
+		CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3052B3ADC5F78961C9F716F8 /* Pods-OneLab-HW3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneLab-HW3.release.xcconfig"; path = "Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3.release.xcconfig"; sourceTree = "<group>"; };
 		CE168EF8280B4D5E00F5CF9B /* OneLab-HW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OneLab-HW3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE168EFB280B4D5E00F5CF9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE168EFD280B4D5E00F5CF9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE168EFF280B4D5E00F5CF9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE168F02280B4D5E00F5CF9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE168EFF280B4D5E00F5CF9B /* MyFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewController.swift; sourceTree = "<group>"; };
 		CE168F05280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneLab_HW3.xcdatamodel; sourceTree = "<group>"; };
 		CE168F07280B4D6100F5CF9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE168F0A280B4D6100F5CF9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE168F0C280B4D6100F5CF9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE168F12280B50CC00F5CF9B /* MyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewController.swift; sourceTree = "<group>"; };
+		CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPinsViewController.swift; sourceTree = "<group>"; };
+		CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
+		CE168F1B280B5D8300F5CF9B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewModel.swift; sourceTree = "<group>"; };
+		CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		CE168F39280C477C00F5CF9B /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		CE168F3D280C4D8E00F5CF9B /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		CE168F3F280C4D9C00F5CF9B /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		CE168F4A280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendsViewModel.swift; sourceTree = "<group>"; };
+		CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		CE168F4E280D732200F5CF9B /* Cell Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell Configurator.swift"; sourceTree = "<group>"; };
+		CE168F5C280E147600F5CF9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE168F5E280E148500F5CF9B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE168F5F280E200C00F5CF9B /* Settable Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settable Cell.swift"; sourceTree = "<group>"; };
+		CE168F61280E202100F5CF9B /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		DA54C022E9077DF9A3AC5378 /* Pods_OneLab_HW3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneLab_HW3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E889A75E25C8C934286F972A /* Pods-OneLab-HW3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneLab-HW3.debug.xcconfig"; path = "Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +74,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				429795E4A6B49E830F64BFA9 /* Pods_OneLab_HW3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AD5EDB943B3FB9B40C831CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E889A75E25C8C934286F972A /* Pods-OneLab-HW3.debug.xcconfig */,
+				3052B3ADC5F78961C9F716F8 /* Pods-OneLab-HW3.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9F6250793AD6614AC7FE1757 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA54C022E9077DF9A3AC5378 /* Pods_OneLab_HW3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE168EEF280B4D5E00F5CF9B = {
 			isa = PBXGroup;
 			children = (
 				CE168EFA280B4D5E00F5CF9B /* OneLab-HW3 */,
 				CE168EF9280B4D5E00F5CF9B /* Products */,
+				7AD5EDB943B3FB9B40C831CD /* Pods */,
+				9F6250793AD6614AC7FE1757 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +121,128 @@
 			children = (
 				CE168EFB280B4D5E00F5CF9B /* AppDelegate.swift */,
 				CE168EFD280B4D5E00F5CF9B /* SceneDelegate.swift */,
-				CE168EFF280B4D5E00F5CF9B /* ViewController.swift */,
-				CE168F01280B4D5E00F5CF9B /* Main.storyboard */,
+				CE168F18280B50F400F5CF9B /* ViewControllers */,
+				CE168F1E280B5D9900F5CF9B /* ViewModels */,
+				CE168F1D280B5D8F00F5CF9B /* Models */,
+				CE168F1F280B600C00F5CF9B /* Cell */,
+				CE168F67280E339400F5CF9B /* Cell ViewModels */,
+				CE168F64280E203400F5CF9B /* Cell Configurator */,
+				CE168F2A280C407B00F5CF9B /* Fonts */,
+				CE168F58280E143200F5CF9B /* Localizable string */,
 				CE168F07280B4D6100F5CF9B /* Assets.xcassets */,
 				CE168F09280B4D6100F5CF9B /* LaunchScreen.storyboard */,
 				CE168F0C280B4D6100F5CF9B /* Info.plist */,
 				CE168F04280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld */,
 			);
 			path = "OneLab-HW3";
+			sourceTree = "<group>";
+		};
+		CE168F18280B50F400F5CF9B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F44280CB97B00F5CF9B /* MyFeed */,
+				CE168F46280CB99B00F5CF9B /* MyPins */,
+				CE168F47280CB9A300F5CF9B /* MyProfile */,
+				CE168F45280CB98E00F5CF9B /* MyFriends */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE168F1D280B5D8F00F5CF9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F1B280B5D8300F5CF9B /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE168F1E280B5D9900F5CF9B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */,
+				CE168F4A280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CE168F1F280B600C00F5CF9B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */,
+				CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */,
+				CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE168F2A280C407B00F5CF9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F39280C477C00F5CF9B /* SF-Pro-Display-Regular.otf */,
+				CE168F3D280C4D8E00F5CF9B /* SF-Pro-Display-Bold.otf */,
+				CE168F3F280C4D9C00F5CF9B /* SF-Pro-Display-Semibold.otf */,
+				CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE168F44280CB97B00F5CF9B /* MyFeed */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F12280B50CC00F5CF9B /* MyFeedViewController.swift */,
+			);
+			path = MyFeed;
+			sourceTree = "<group>";
+		};
+		CE168F45280CB98E00F5CF9B /* MyFriends */ = {
+			isa = PBXGroup;
+			children = (
+				CE168EFF280B4D5E00F5CF9B /* MyFriendsViewController.swift */,
+				CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */,
+			);
+			path = MyFriends;
+			sourceTree = "<group>";
+		};
+		CE168F46280CB99B00F5CF9B /* MyPins */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */,
+			);
+			path = MyPins;
+			sourceTree = "<group>";
+		};
+		CE168F47280CB9A300F5CF9B /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		CE168F58280E143200F5CF9B /* Localizable string */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F5D280E147600F5CF9B /* Localizable.strings */,
+			);
+			path = "Localizable string";
+			sourceTree = "<group>";
+		};
+		CE168F64280E203400F5CF9B /* Cell Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F5F280E200C00F5CF9B /* Settable Cell.swift */,
+				CE168F61280E202100F5CF9B /* Configurator.swift */,
+				CE168F4E280D732200F5CF9B /* Cell Configurator.swift */,
+			);
+			path = "Cell Configurator";
+			sourceTree = "<group>";
+		};
+		CE168F67280E339400F5CF9B /* Cell ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */,
+			);
+			path = "Cell ViewModels";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE168F0F280B4D6100F5CF9B /* Build configuration list for PBXNativeTarget "OneLab-HW3" */;
 			buildPhases = (
+				864CE0873783BC5D2B013182 /* [CP] Check Pods Manifest.lock */,
 				CE168EF4280B4D5E00F5CF9B /* Sources */,
 				CE168EF5280B4D5E00F5CF9B /* Frameworks */,
 				CE168EF6280B4D5E00F5CF9B /* Resources */,
+				3202F5849C8AED5666850754 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,6 +289,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE168EEF280B4D5E00F5CF9B;
 			productRefGroup = CE168EF9280B4D5E00F5CF9B /* Products */;
@@ -128,22 +306,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE168F40280C4D9C00F5CF9B /* SF-Pro-Display-Semibold.otf in Resources */,
+				CE168F3A280C477C00F5CF9B /* SF-Pro-Display-Regular.otf in Resources */,
+				CE168F3E280C4D8E00F5CF9B /* SF-Pro-Display-Bold.otf in Resources */,
+				CE168F5B280E147600F5CF9B /* Localizable.strings in Resources */,
+				CE168F32280C434B00F5CF9B /* Montserrat-Regular.ttf in Resources */,
 				CE168F0B280B4D6100F5CF9B /* LaunchScreen.storyboard in Resources */,
 				CE168F08280B4D6100F5CF9B /* Assets.xcassets in Resources */,
-				CE168F03280B4D5E00F5CF9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3202F5849C8AED5666850754 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		864CE0873783BC5D2B013182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneLab-HW3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE168EF4280B4D5E00F5CF9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE168F00280B4D5E00F5CF9B /* ViewController.swift in Sources */,
+				CE168F00280B4D5E00F5CF9B /* MyFriendsViewController.swift in Sources */,
+				CE168F62280E202100F5CF9B /* Configurator.swift in Sources */,
 				CE168F06280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld in Sources */,
+				CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */,
+				CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */,
+				CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */,
+				CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */,
+				CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */,
+				CE168F17280B50EA00F5CF9B /* MyProfileViewController.swift in Sources */,
+				CE168F4D280D721500F5CF9B /* UserTableViewCell.swift in Sources */,
+				CE168F15280B50DA00F5CF9B /* MyPinsViewController.swift in Sources */,
+				CE168F13280B50CC00F5CF9B /* MyFeedViewController.swift in Sources */,
+				CE168F49280CBB8000F5CF9B /* InfoTableViewCell.swift in Sources */,
+				CE168F1C280B5D8300F5CF9B /* Models.swift in Sources */,
 				CE168EFC280B4D5E00F5CF9B /* AppDelegate.swift in Sources */,
+				CE168F4B280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift in Sources */,
+				CE168F4F280D732200F5CF9B /* Cell Configurator.swift in Sources */,
 				CE168EFE280B4D5E00F5CF9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,20 +389,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE168F01280B4D5E00F5CF9B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE168F02280B4D5E00F5CF9B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE168F09280B4D6100F5CF9B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CE168F0A280B4D6100F5CF9B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE168F5D280E147600F5CF9B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE168F5C280E147600F5CF9B /* en */,
+				CE168F5E280E148500F5CF9B /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -174,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -235,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -288,6 +529,7 @@
 		};
 		CE168F10280B4D6100F5CF9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E889A75E25C8C934286F972A /* Pods-OneLab-HW3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,7 +540,6 @@
 				INFOPLIST_FILE = "OneLab-HW3/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +557,7 @@
 		};
 		CE168F11280B4D6100F5CF9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3052B3ADC5F78961C9F716F8 /* Pods-OneLab-HW3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,7 +568,6 @@
 				INFOPLIST_FILE = "OneLab-HW3/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

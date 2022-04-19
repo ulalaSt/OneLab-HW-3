@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  OneLab-HW3
+
+  Created by user on 19.04.2022.
+  
+*/
+
+"My Feed" = "My Feed";
+"My Friends" = "My Friends";
+"My Pins" = "My Pins";
+"My Profile" = "My Profile";
+"Add New Friend" = "Add New Friend";
+"Business magnate" = "Business magnate";
+"Software Engineer" = "Software Engineer";
+"CEO" = "CEO";
+"Ex-President" = "Ex-President";
+"Engineer" = "Engineer";
+"Entrepreneur" = "Entrepreneur";
+"CEO" = "CEO";
+"Investor" = "Investor";
+"Add New Contacts" = "Add New Contacts";
+"From Contacts" = "From Contacts";
+"By Username" = "By Username";
+"By Phone Number" = "By Phone Number";
+"You Might Know Them" = "You Might Know Them";
+"Friends" = "Friends";
+"ADD" = "ADD";
+"ADDED" = "ADDED";

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Model for each section of table
 struct TableSection {
     var sectionName: String
     var showNumberOfRows: Bool

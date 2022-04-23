@@ -2,10 +2,10 @@
 
 import Foundation
 
+typealias OptionCellConfigurator = TableViewCellConfigurator<OptionTableViewCell, Option>
+typealias UserCellConfigurator = TableViewCellConfigurator<UserTableViewCell, User>
+
 class AddNewFriendsViewModel {
-    
-    typealias OptionCellConfigurator = TableViewCellConfigurator<OptionTableViewCell, Option>
-    typealias UserCellConfigurator = TableViewCellConfigurator<UserTableViewCell, User>
     
     let sections: [TableSection] = [
         TableSection(

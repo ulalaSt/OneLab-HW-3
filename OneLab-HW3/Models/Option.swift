@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Model for table cell of type Option
 struct Option {
     let text: String
     let iconName: String

@@ -8,11 +8,13 @@
 import Foundation
 import UIKit
 
-//MARK: - Each user cell has nickname, status icon, image, friends count, and Add to friends button. Conforming them and configuring action when the Add button tapped.
+//MARK: - Each user tableView cell has nickname, status icon, image, friends count, and Add to friends button. Conforming them and configuring action when the Add button tapped.
 
 class UserTableViewCell: UITableViewCell {
     
-    private let viewModel = UserCellViewModel()
+    static let didTapButtonAction = "UserCellDidTapButtonAction"
+
+    let viewModel = UserCellViewModel()
     
     private var userNickname: UILabel = {
         let userNickname = UILabel()
@@ -107,8 +109,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     @objc func didTapAddToFriends() {
-        viewModel.didTapAddToFriends()
-        updateAddToFriendsButton(viewModel.isAddedToFriends)
+        CellAction.custom(type(of: self).didTapButtonAction).invoke(cell: self)
     }
     
     func updateAddToFriendsButton(_ isAdded: Bool){
@@ -149,12 +150,10 @@ extension UserTableViewCell: SettableCell {
     }
     
     private func friendsLabelCreator(from number: Int) -> String {
-        
         if number < 4000 {
             // Example output: "3999 Friends", "234 Friends"
             return smallNumberToFriendsLabel(from: number)
         }
-        
         // Example output: "12.4K Friends", "120K Friends"
         return largeNumberToFriendsLabel(from: number)
     }
@@ -179,6 +178,7 @@ extension UserTableViewCell: SettableCell {
 
 extension UserTableViewCell {
     
+    //called every time mode changes
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         updateCG()

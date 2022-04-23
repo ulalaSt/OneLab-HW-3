@@ -12,3 +12,6 @@ protocol SettableCell {
     static var heightOfCell: Double {get}
     func configure(with data: TypeOfData)
 }
+extension SettableCell {
+    static var reuseIdentifier: String { return String(describing: Self.self) }
+}

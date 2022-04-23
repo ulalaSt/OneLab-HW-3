@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-//MARK: - Each item cell has image, name, position(job), status icon. Just adding them.
+//MARK: - Each collectionView cell has image, name, position(job), status icon. Just adding them.
 
 class MyFriendsCollectionViewCell: UICollectionViewCell {
     

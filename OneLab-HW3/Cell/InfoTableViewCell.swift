@@ -10,7 +10,7 @@ import SnapKit
 
 //MARK: - Each option cell has text and corresponding icon. Just setting them.
 
-class OptionTableViewCell: UITableViewCell, SettableCell {
+class OptionTableViewCell: UITableViewCell {
     
     private var optionTextLabel: UILabel = {
         let optionTextLabel = UILabel()
@@ -39,8 +39,11 @@ class OptionTableViewCell: UITableViewCell, SettableCell {
             make.centerY.equalToSuperview()
         }
     }
+}
+
+//MARK: - Conformance to SettableCell
+extension OptionTableViewCell: SettableCell {
     
-    //Conform to be Settable
     typealias TypeOfData = Option
 
     static var heightOfCell: Double { 44 }

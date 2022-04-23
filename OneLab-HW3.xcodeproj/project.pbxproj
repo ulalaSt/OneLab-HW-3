@@ -37,6 +37,9 @@
 		CE168F93280F0E3300F5CF9B /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F92280F0E3300F5CF9B /* Option.swift */; };
 		CE168F95280F45FF00F5CF9B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F94280F45FF00F5CF9B /* UIColor + Extensions.swift */; };
 		CE168F98280F4DF400F5CF9B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F97280F4DF400F5CF9B /* UIFont + Extensions.swift */; };
+		CEBB0A6C28142C69006C32AC /* TableDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0A6B28142C69006C32AC /* TableDirector.swift */; };
+		CEBB0A6E28142C7A006C32AC /* CellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0A6D28142C7A006C32AC /* CellAction.swift */; };
+		CEBB0A7028142C8E006C32AC /* CellActionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0A6F28142C8E006C32AC /* CellActionProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		CE168F92280F0E3300F5CF9B /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		CE168F94280F45FF00F5CF9B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		CE168F97280F4DF400F5CF9B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		CEBB0A6B28142C69006C32AC /* TableDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDirector.swift; sourceTree = "<group>"; };
+		CEBB0A6D28142C7A006C32AC /* CellAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAction.swift; sourceTree = "<group>"; };
+		CEBB0A6F28142C8E006C32AC /* CellActionProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellActionProxy.swift; sourceTree = "<group>"; };
 		DA54C022E9077DF9A3AC5378 /* Pods_OneLab_HW3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneLab_HW3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E889A75E25C8C934286F972A /* Pods-OneLab-HW3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneLab-HW3.debug.xcconfig"; path = "Target Support Files/Pods-OneLab-HW3/Pods-OneLab-HW3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +147,9 @@
 				CE168F09280B4D6100F5CF9B /* LaunchScreen.storyboard */,
 				CE168F0C280B4D6100F5CF9B /* Info.plist */,
 				CE168F04280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld */,
+				CEBB0A6B28142C69006C32AC /* TableDirector.swift */,
+				CEBB0A6D28142C7A006C32AC /* CellAction.swift */,
+				CEBB0A6F28142C8E006C32AC /* CellActionProxy.swift */,
 			);
 			path = "OneLab-HW3";
 			sourceTree = "<group>";
@@ -395,12 +404,14 @@
 			files = (
 				CE168F00280B4D5E00F5CF9B /* MyFriendsViewController.swift in Sources */,
 				CE168F62280E202100F5CF9B /* CellConfigurator.swift in Sources */,
+				CEBB0A6C28142C69006C32AC /* TableDirector.swift in Sources */,
 				CE168F06280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld in Sources */,
 				CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */,
 				CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */,
 				CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */,
 				CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */,
 				CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */,
+				CEBB0A6E28142C7A006C32AC /* CellAction.swift in Sources */,
 				CE168F91280F0DA600F5CF9B /* User.swift in Sources */,
 				CE168F17280B50EA00F5CF9B /* MyProfileViewController.swift in Sources */,
 				CE168F4D280D721500F5CF9B /* UserTableViewCell.swift in Sources */,
@@ -409,6 +420,7 @@
 				CE168F49280CBB8000F5CF9B /* InfoTableViewCell.swift in Sources */,
 				CE168F8F280F0CE600F5CF9B /* TableSection.swift in Sources */,
 				CE168F93280F0E3300F5CF9B /* Option.swift in Sources */,
+				CEBB0A7028142C8E006C32AC /* CellActionProxy.swift in Sources */,
 				CE168F98280F4DF400F5CF9B /* UIFont + Extensions.swift in Sources */,
 				CE168EFC280B4D5E00F5CF9B /* AppDelegate.swift in Sources */,
 				CE168F95280F45FF00F5CF9B /* UIColor + Extensions.swift in Sources */,

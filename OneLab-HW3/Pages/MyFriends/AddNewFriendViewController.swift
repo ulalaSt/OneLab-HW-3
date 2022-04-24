@@ -37,15 +37,11 @@ class AddNewFriendViewController: UIViewController {
     }
     private func cellActionHandlers() {
         self.tableDirector.actionProxy
-            .on(action: .didSelect) { (config: OptionCellConfigurator, cell) in
-            }
-            .on(action: .willDisplay) { (config: UserCellConfigurator, cell) in
-                cell.backgroundColor = .gray
-            }
             .on(action: .custom(UserTableViewCell.didTapButtonAction)){ (config: UserCellConfigurator, cell) in
-                print("Button is tapped")
-                cell.viewModel.didTapAddToFriends()
-                cell.updateAddToFriendsButton(cell.viewModel.isAddedToFriends)
+                if let indexPath = self.tableView.indexPath(for: cell), let configurator = self.viewModel.sections[indexPath.section].items[indexPath.row] as? UserCellConfigurator {
+                    configurator.item.isYourFriend = !configurator.item.isYourFriend
+                    self.tableDirector.tableView.reloadData()
+                }
             }
     }
 

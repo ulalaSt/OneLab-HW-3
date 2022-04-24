@@ -31,7 +31,6 @@
 		CE168F5B280E147600F5CF9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE168F5D280E147600F5CF9B /* Localizable.strings */; };
 		CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F5F280E200C00F5CF9B /* Settable Cell.swift */; };
 		CE168F62280E202100F5CF9B /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F61280E202100F5CF9B /* CellConfigurator.swift */; };
-		CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */; };
 		CE168F8F280F0CE600F5CF9B /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F8E280F0CE600F5CF9B /* TableSection.swift */; };
 		CE168F91280F0DA600F5CF9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F90280F0DA600F5CF9B /* User.swift */; };
 		CE168F93280F0E3300F5CF9B /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F92280F0E3300F5CF9B /* Option.swift */; };
@@ -70,7 +69,6 @@
 		CE168F5E280E148500F5CF9B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE168F5F280E200C00F5CF9B /* Settable Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settable Cell.swift"; sourceTree = "<group>"; };
 		CE168F61280E202100F5CF9B /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
-		CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		CE168F8E280F0CE600F5CF9B /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		CE168F90280F0DA600F5CF9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE168F92280F0E3300F5CF9B /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -133,13 +131,11 @@
 		CE168EFA280B4D5E00F5CF9B /* OneLab-HW3 */ = {
 			isa = PBXGroup;
 			children = (
-				CE168F8D280EE26600F5CF9B /* AppDelegates */,
-				CE168F18280B50F400F5CF9B /* ViewControllers */,
+				CE168F8D280EE26600F5CF9B /* Application Layer */,
+				CE168F18280B50F400F5CF9B /* Pages */,
 				CE168F1E280B5D9900F5CF9B /* ViewModels */,
 				CE168F1D280B5D8F00F5CF9B /* Models */,
 				CE168F1F280B600C00F5CF9B /* Cell */,
-				CE168F67280E339400F5CF9B /* Cell ViewModels */,
-				CE168F64280E203400F5CF9B /* Cell Configurator */,
 				CE168F96280F460600F5CF9B /* Extensions */,
 				CE168F2A280C407B00F5CF9B /* Fonts */,
 				CE168F58280E143200F5CF9B /* Localizable string */,
@@ -154,7 +150,7 @@
 			path = "OneLab-HW3";
 			sourceTree = "<group>";
 		};
-		CE168F18280B50F400F5CF9B /* ViewControllers */ = {
+		CE168F18280B50F400F5CF9B /* Pages */ = {
 			isa = PBXGroup;
 			children = (
 				CE168F44280CB97B00F5CF9B /* MyFeed */,
@@ -162,7 +158,7 @@
 				CE168F47280CB9A300F5CF9B /* MyProfile */,
 				CE168F45280CB98E00F5CF9B /* MyFriends */,
 			);
-			path = ViewControllers;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		CE168F1D280B5D8F00F5CF9B /* Models */ = {
@@ -190,6 +186,7 @@
 				CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */,
 				CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */,
 				CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */,
+				CE168F64280E203400F5CF9B /* Cell Configurator */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -256,21 +253,13 @@
 			path = "Cell Configurator";
 			sourceTree = "<group>";
 		};
-		CE168F67280E339400F5CF9B /* Cell ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				CE168F65280E29D600F5CF9B /* UserCellViewModel.swift */,
-			);
-			path = "Cell ViewModels";
-			sourceTree = "<group>";
-		};
-		CE168F8D280EE26600F5CF9B /* AppDelegates */ = {
+		CE168F8D280EE26600F5CF9B /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
 				CE168EFB280B4D5E00F5CF9B /* AppDelegate.swift */,
 				CE168EFD280B4D5E00F5CF9B /* SceneDelegate.swift */,
 			);
-			path = AppDelegates;
+			path = "Application Layer";
 			sourceTree = "<group>";
 		};
 		CE168F96280F460600F5CF9B /* Extensions */ = {
@@ -408,7 +397,6 @@
 				CE168F06280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld in Sources */,
 				CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */,
 				CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */,
-				CE168F66280E29D600F5CF9B /* UserCellViewModel.swift in Sources */,
 				CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */,
 				CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */,
 				CEBB0A6E28142C7A006C32AC /* CellAction.swift in Sources */,

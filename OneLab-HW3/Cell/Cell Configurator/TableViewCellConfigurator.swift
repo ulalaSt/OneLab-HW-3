@@ -16,7 +16,7 @@ class TableViewCellConfigurator<CellType: SettableCell, DataType>: CellConfigura
         return CellType.heightOfCell
     }
     
-    let item: DataType
+    var item: DataType
     init(item: DataType) {
         self.item = item
     }

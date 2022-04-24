@@ -10,7 +10,8 @@ import UIKit
 class TableDirector: NSObject {
     
     let tableView: UITableView
-    var items = [TableSection]() {
+    
+    private(set) var items = [TableSection]() {
         didSet {
             self.tableView.reloadData()
         }
@@ -28,7 +29,7 @@ class TableDirector: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(onActionEvent(notification:)), name: CellAction.notificationName, object: nil)
     }
     
-    @objc fileprivate func onActionEvent(notification: Notification) {
+    @objc private func onActionEvent(notification: Notification) {
         if let eventData = notification.userInfo?["data"] as? CellActionEventData, let cell = eventData.cell as? UITableViewCell, let indexPath = self.tableView.indexPath(for: cell) {
             actionProxy.invoke(action: eventData.action, cell: cell, configurator: self.items[indexPath.section].items[indexPath.row])
         }
@@ -44,7 +45,6 @@ extension TableDirector: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))

@@ -14,7 +14,7 @@ struct User {
     let status: Status
     let nickName: String
     let numberOfFriends: Int
-    let isYourFriend: Bool
+    var isYourFriend: Bool
     
     enum Status {
         case online, recent, offline

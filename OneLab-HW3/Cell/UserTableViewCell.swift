@@ -14,7 +14,7 @@ class UserTableViewCell: UITableViewCell {
     
     static let didTapButtonAction = "UserCellDidTapButtonAction"
 
-    let viewModel = UserCellViewModel()
+    private var isAddedToFriends: Bool!
     
     private var userNickname: UILabel = {
         let userNickname = UILabel()
@@ -112,6 +112,26 @@ class UserTableViewCell: UITableViewCell {
         CellAction.custom(type(of: self).didTapButtonAction).invoke(cell: self)
     }
     
+}
+
+//MARK: - Conformance to SettableCell
+extension UserTableViewCell: SettableCell {
+    
+    typealias TypeOfData = User
+    
+    static var heightOfCell: Double { 72 }
+    
+    func configure(with data: User) {
+        
+        userNickname.text = data.nickName
+        userImageView.image = UIImage(named: data.imageName)
+        isAddedToFriends = data.isYourFriend
+        updateAddToFriendsButton(data.isYourFriend)
+        userStatusIcon.backgroundColor = .appropriateColor(of: data.status)
+        userFriendsLabel.text = friendsLabelCreator(from: data.numberOfFriends)
+        
+    }
+    
     func updateAddToFriendsButton(_ isAdded: Bool){
         if isAdded {
             addToFriendsButton.backgroundColor = UIColor(white: 1, alpha: 0)
@@ -129,26 +149,7 @@ class UserTableViewCell: UITableViewCell {
             addIcon.image = UIImage(systemName: "checkmark.circle.fill")
         }
     }
-}
 
-//MARK: - Conformance to SettableCell
-extension UserTableViewCell: SettableCell {
-    
-    typealias TypeOfData = User
-    
-    static var heightOfCell: Double { 72 }
-    
-    func configure(with data: User) {
-        
-        userNickname.text = data.nickName
-        userImageView.image = UIImage(named: data.imageName)
-        viewModel.isAddedToFriends = data.isYourFriend
-        updateAddToFriendsButton(data.isYourFriend)
-        userStatusIcon.backgroundColor = .appropriateColor(of: data.status)
-        userFriendsLabel.text = friendsLabelCreator(from: data.numberOfFriends)
-        
-    }
-    
     private func friendsLabelCreator(from number: Int) -> String {
         if number < 4000 {
             // Example output: "3999 Friends", "234 Friends"
@@ -185,7 +186,7 @@ extension UserTableViewCell {
     }
     
     func updateCG(){
-        if !viewModel.isAddedToFriends {
+        if !isAddedToFriends {
             addToFriendsButton.layer.borderColor = UIColor.grayToTransparent.cgColor
         }
         userStatusIcon.layer.borderColor = UIColor.whiteToBlack.cgColor

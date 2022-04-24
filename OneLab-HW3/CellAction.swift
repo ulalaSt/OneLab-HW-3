@@ -9,14 +9,10 @@ import Foundation
 import UIKit
 
 enum CellAction: Hashable {
-    case didSelect
-    case willDisplay
     case custom(String)
     
     var hashValue: Int {
         switch self {
-        case .didSelect: return 0
-        case .willDisplay: return 1
         case .custom(let custom):
             return custom.hashValue
         }

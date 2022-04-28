@@ -19,7 +19,8 @@ extension UIColor {
     static let secondaryToDark = UIColor(named: "Secondary To Dark")!
     static let blackToGray = UIColor(named: "Black to Gray")!
     static let lightToDarkGray = UIColor(named: "LightGray To DarkGray")!
-    
+    static let darkToLightGray = UIColor(named: "DarkGray To LightGray")!
+
     //For Status Icons
     static func appropriateColor(of status: User.Status) -> UIColor {
         switch status {
@@ -28,7 +29,7 @@ extension UIColor {
         case .recent:
             return UIColor(red: 1, green: 0.8, blue: 0, alpha: 1)
         case .offline:
-            return .secondaryToDark
+            return .lightToDarkGray
         }
     }
 }

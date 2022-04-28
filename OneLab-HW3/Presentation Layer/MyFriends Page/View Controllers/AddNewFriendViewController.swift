@@ -19,11 +19,9 @@ class AddNewFriendViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         title = String(localized: "Add New Friend")
         view.backgroundColor = .whiteToBlack
-        
         layout()
         cellActionHandlers()
         tableDirector.tableView.reloadData()
@@ -35,13 +33,12 @@ class AddNewFriendViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
     }
+    
     private func cellActionHandlers() {
         self.tableDirector.actionProxy
-            .on(action: .custom(UserTableViewCell.didTapButtonAction)){ (config: UserCellConfigurator, cell) in
-                if let indexPath = self.tableView.indexPath(for: cell), let configurator = self.viewModel.sections[indexPath.section].items[indexPath.row] as? UserCellConfigurator {
-                    configurator.item.isYourFriend = !configurator.item.isYourFriend
+            .on(action: .custom(UserTableViewCell.didTapButtonAction)) { (config: UserCellConfigurator) in
+                    config.item.isYourFriend = !config.item.isYourFriend
                     self.tableDirector.tableView.reloadData()
-                }
             }
     }
 

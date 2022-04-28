@@ -26,17 +26,27 @@ class OptionTableViewCell: UITableViewCell {
         return iconView
     }()
     
-    override func layoutSubviews() {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor.clear.withAlphaComponent(0)
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func layout() {
         contentView.addSubview(iconView)
-        iconView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
-            make.centerY.equalToSuperview()
-            make.size.equalTo(30)
+        iconView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.centerY.equalToSuperview()
+            $0.size.equalTo(30)
         }
         contentView.addSubview(optionTextLabel)
-        optionTextLabel.snp.makeConstraints { make in
-            make.leading.equalTo(iconView.snp.trailing).offset(8)
-            make.centerY.equalToSuperview()
+        optionTextLabel.snp.makeConstraints {
+            $0.leading.equalTo(iconView.snp.trailing).offset(8)
+            $0.centerY.equalToSuperview()
         }
     }
 }

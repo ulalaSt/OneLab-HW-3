@@ -21,14 +21,14 @@ enum CellAction: Hashable {
 
 struct CellActionEventData {
     let action: CellAction
-    let cell: UIView
+    let cell: UITableViewCell
 }
 
 extension CellAction {
     static let notificationName = NSNotification.Name("cellAction")
     
-    func invoke(cell: UIView) {
-        NotificationCenter.default.post(name: CellAction.notificationName, object: nil, userInfo: ["data": CellActionEventData(action: self, cell: cell)])
+    func invoke(cell: UITableViewCell) {
+            NotificationCenter.default.post(name: CellAction.notificationName, object: nil, userInfo: ["data": CellActionEventData(action: self, cell: cell)])
     }
 }
 

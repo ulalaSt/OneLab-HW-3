@@ -30,14 +30,22 @@ class TableDirector: NSObject {
     }
     
     @objc private func onActionEvent(notification: Notification) {
-        if let eventData = notification.userInfo?["data"] as? CellActionEventData, let cell = eventData.cell as? UITableViewCell, let indexPath = self.tableView.indexPath(for: cell) {
-            actionProxy.invoke(action: eventData.action, cell: cell, configurator: self.items[indexPath.section].items[indexPath.row])
+        if let eventData = notification.userInfo?["data"] as? CellActionEventData, let indexPath = tableView.indexPath(for: eventData.cell) {
+            actionProxy.invoke(action: eventData.action, configurator: self.items[indexPath.section].items[indexPath.row])
         }
     }
 }
 
+
+
+
 //MARK: - Header and Footer heights, and Header View with attributed title
 extension TableDirector: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 24
     }
@@ -45,6 +53,7 @@ extension TableDirector: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
@@ -82,12 +91,15 @@ extension TableDirector: UITableViewDelegate {
     
     private func headerNumberWithAttributes(for rowCount: Int) -> NSMutableAttributedString {
         let headerNumberAttributes = [
-            NSAttributedString.Key.font: UIFont.mainCustomFont(.regular, size: 13),
-            NSAttributedString.Key.foregroundColor: UIColor.lightToDarkGray
+            NSAttributedString.Key.font: UIFont.mainCustomFont(.regular, size: 15),
+            NSAttributedString.Key.foregroundColor: UIColor.darkToLightGray
         ]
         return NSMutableAttributedString(string: "  (\(rowCount))", attributes: headerNumberAttributes)
     }
 }
+
+
+
 
 //MARK: - Number of sections and rows. Height for rows. And Cell Configuration.
 extension TableDirector: UITableViewDataSource {

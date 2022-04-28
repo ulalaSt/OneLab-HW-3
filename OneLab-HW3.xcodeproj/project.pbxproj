@@ -18,7 +18,7 @@
 		CE168F15280B50DA00F5CF9B /* MyPinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */; };
 		CE168F17280B50EA00F5CF9B /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */; };
 		CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */; };
-		CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */; };
+		CE168F21280B603800F5CF9B /* MyFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F20280B603800F5CF9B /* MyFriendsCell.swift */; };
 		CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */; };
 		CE168F32280C434B00F5CF9B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */; };
 		CE168F3A280C477C00F5CF9B /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE168F39280C477C00F5CF9B /* SF-Pro-Display-Regular.otf */; };
@@ -55,7 +55,7 @@
 		CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPinsViewController.swift; sourceTree = "<group>"; };
 		CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
-		CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE168F20280B603800F5CF9B /* MyFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsCell.swift; sourceTree = "<group>"; };
 		CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewModel.swift; sourceTree = "<group>"; };
 		CE168F31280C434B00F5CF9B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		CE168F39280C477C00F5CF9B /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -132,10 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CE168F8D280EE26600F5CF9B /* Application Layer */,
-				CE168F18280B50F400F5CF9B /* Pages */,
-				CE168F1E280B5D9900F5CF9B /* ViewModels */,
-				CE168F1D280B5D8F00F5CF9B /* Models */,
-				CE168F1F280B600C00F5CF9B /* Cell */,
+				CE168F18280B50F400F5CF9B /* Presentation Layer */,
 				CE168F96280F460600F5CF9B /* Extensions */,
 				CE168F2A280C407B00F5CF9B /* Fonts */,
 				CE168F58280E143200F5CF9B /* Localizable string */,
@@ -143,22 +140,19 @@
 				CE168F09280B4D6100F5CF9B /* LaunchScreen.storyboard */,
 				CE168F0C280B4D6100F5CF9B /* Info.plist */,
 				CE168F04280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld */,
-				CEBB0A6B28142C69006C32AC /* TableDirector.swift */,
-				CEBB0A6D28142C7A006C32AC /* CellAction.swift */,
-				CEBB0A6F28142C8E006C32AC /* CellActionProxy.swift */,
 			);
 			path = "OneLab-HW3";
 			sourceTree = "<group>";
 		};
-		CE168F18280B50F400F5CF9B /* Pages */ = {
+		CE168F18280B50F400F5CF9B /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
-				CE168F44280CB97B00F5CF9B /* MyFeed */,
-				CE168F46280CB99B00F5CF9B /* MyPins */,
-				CE168F47280CB9A300F5CF9B /* MyProfile */,
-				CE168F45280CB98E00F5CF9B /* MyFriends */,
+				CE168F44280CB97B00F5CF9B /* MyFeed Page */,
+				CE168F46280CB99B00F5CF9B /* MyPins Page */,
+				CE168F47280CB9A300F5CF9B /* MyProfile Page */,
+				CE168F45280CB98E00F5CF9B /* MyFriends Page */,
 			);
-			path = Pages;
+			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
 		CE168F1D280B5D8F00F5CF9B /* Models */ = {
@@ -171,24 +165,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CE168F1E280B5D9900F5CF9B /* ViewModels */ = {
+		CE168F1E280B5D9900F5CF9B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
 				CE168F22280B706A00F5CF9B /* MyFriendsViewModel.swift */,
 				CE168F4A280CC1EA00F5CF9B /* AddNewFriendsViewModel.swift */,
 			);
-			path = ViewModels;
+			path = "View Models";
 			sourceTree = "<group>";
 		};
-		CE168F1F280B600C00F5CF9B /* Cell */ = {
+		CE168F1F280B600C00F5CF9B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CE168F20280B603800F5CF9B /* MyFriendsCollectionViewCell.swift */,
+				CE168F20280B603800F5CF9B /* MyFriendsCell.swift */,
 				CE168F48280CBB8000F5CF9B /* InfoTableViewCell.swift */,
 				CE168F4C280D721500F5CF9B /* UserTableViewCell.swift */,
-				CE168F64280E203400F5CF9B /* Cell Configurator */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CE168F2A280C407B00F5CF9B /* Fonts */ = {
@@ -202,37 +195,40 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		CE168F44280CB97B00F5CF9B /* MyFeed */ = {
+		CE168F44280CB97B00F5CF9B /* MyFeed Page */ = {
 			isa = PBXGroup;
 			children = (
 				CE168F12280B50CC00F5CF9B /* MyFeedViewController.swift */,
 			);
-			path = MyFeed;
+			path = "MyFeed Page";
 			sourceTree = "<group>";
 		};
-		CE168F45280CB98E00F5CF9B /* MyFriends */ = {
+		CE168F45280CB98E00F5CF9B /* MyFriends Page */ = {
 			isa = PBXGroup;
 			children = (
-				CE168EFF280B4D5E00F5CF9B /* MyFriendsViewController.swift */,
-				CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */,
+				CE66F39F2818B43C00860EA2 /* View Controllers */,
+				CE168F1E280B5D9900F5CF9B /* View Models */,
+				CE168F1D280B5D8F00F5CF9B /* Models */,
+				CE66F3A12818B4FC00860EA2 /* View */,
+				CE66F3A22818B5F000860EA2 /* Table Manager */,
 			);
-			path = MyFriends;
+			path = "MyFriends Page";
 			sourceTree = "<group>";
 		};
-		CE168F46280CB99B00F5CF9B /* MyPins */ = {
+		CE168F46280CB99B00F5CF9B /* MyPins Page */ = {
 			isa = PBXGroup;
 			children = (
 				CE168F14280B50DA00F5CF9B /* MyPinsViewController.swift */,
 			);
-			path = MyPins;
+			path = "MyPins Page";
 			sourceTree = "<group>";
 		};
-		CE168F47280CB9A300F5CF9B /* MyProfile */ = {
+		CE168F47280CB9A300F5CF9B /* MyProfile Page */ = {
 			isa = PBXGroup;
 			children = (
 				CE168F16280B50EA00F5CF9B /* MyProfileViewController.swift */,
 			);
-			path = MyProfile;
+			path = "MyProfile Page";
 			sourceTree = "<group>";
 		};
 		CE168F58280E143200F5CF9B /* Localizable string */ = {
@@ -269,6 +265,50 @@
 				CE168F97280F4DF400F5CF9B /* UIFont + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE66F39F2818B43C00860EA2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE168EFF280B4D5E00F5CF9B /* MyFriendsViewController.swift */,
+				CE168F19280B5B0A00F5CF9B /* AddNewFriendViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CE66F3A12818B4FC00860EA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE168F1F280B600C00F5CF9B /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE66F3A22818B5F000860EA2 /* Table Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CE66F3A32818B69B00860EA2 /* Table Director */,
+				CE66F3A42818B6AC00860EA2 /* Cell Action Manager */,
+				CE168F64280E203400F5CF9B /* Cell Configurator */,
+			);
+			path = "Table Manager";
+			sourceTree = "<group>";
+		};
+		CE66F3A32818B69B00860EA2 /* Table Director */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0A6B28142C69006C32AC /* TableDirector.swift */,
+			);
+			path = "Table Director";
+			sourceTree = "<group>";
+		};
+		CE66F3A42818B6AC00860EA2 /* Cell Action Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0A6D28142C7A006C32AC /* CellAction.swift */,
+				CEBB0A6F28142C8E006C32AC /* CellActionProxy.swift */,
+			);
+			path = "Cell Action Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +437,7 @@
 				CE168F06280B4D5E00F5CF9B /* OneLab_HW3.xcdatamodeld in Sources */,
 				CE168F60280E200C00F5CF9B /* Settable Cell.swift in Sources */,
 				CE168F23280B706A00F5CF9B /* MyFriendsViewModel.swift in Sources */,
-				CE168F21280B603800F5CF9B /* MyFriendsCollectionViewCell.swift in Sources */,
+				CE168F21280B603800F5CF9B /* MyFriendsCell.swift in Sources */,
 				CE168F1A280B5B0A00F5CF9B /* AddNewFriendViewController.swift in Sources */,
 				CEBB0A6E28142C7A006C32AC /* CellAction.swift in Sources */,
 				CE168F91280F0DA600F5CF9B /* User.swift in Sources */,

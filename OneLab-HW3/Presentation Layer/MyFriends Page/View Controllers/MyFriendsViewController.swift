@@ -2,43 +2,37 @@
 import UIKit
 import SnapKit
 
-//MARK: - Just configuring a CollectionView
+//MARK: - CollectionView configuration
 
 class MyFriendsViewController: UIViewController {
     
     private let viewModel = MyFriendsViewModel()
     
     private let collectionView: UICollectionView = {
-        
         let collectionViewLayOut = UICollectionViewFlowLayout()
         collectionViewLayOut.scrollDirection = .vertical
         collectionViewLayOut.minimumLineSpacing = 8
         collectionViewLayOut.minimumInteritemSpacing = 8
-
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayOut)
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
-        collectionView.register(MyFriendsCollectionViewCell.self,
-                                forCellWithReuseIdentifier: MyFriendsCollectionViewCell.identifier)
+        collectionView.register(MyFriendsCell.self, forCellWithReuseIdentifier: MyFriendsCell.identifier)
         return collectionView
-        
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .secondaryToDark
         collectionView.dataSource = self
         collectionView.delegate = self
         layout()
-        
         configureNavigationBar()
     }
     
     private func layout(){
         view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(16)
+        collectionView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(16)
         }
     }
     
@@ -63,22 +57,20 @@ class MyFriendsViewController: UIViewController {
     @objc private func didTapRightBarItem(){
         print("didTapRightBarItem")
     }
-
 }
 
 
 
-//MARK: - Cell Configuration and Count
+//MARK: - Cell Configuration and Item Count
 
 extension MyFriendsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyFriendsCollectionViewCell.identifier,
-                                                      for: indexPath) as! MyFriendsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyFriendsCell.identifier, for: indexPath) as! MyFriendsCell
         cell.configure(user: viewModel.users[indexPath.row])
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.users.count
     }
@@ -88,9 +80,14 @@ extension MyFriendsViewController: UICollectionViewDataSource {
 
 //MARK: - Setting Size for Item
 
-extension MyFriendsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension MyFriendsViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: ((view.frame.size.width - 40)/2), height: (view.frame.size.width - 40)/1.9)
     }
+}
+
+
+extension MyFriendsViewController: UICollectionViewDelegate {
+    //Add Delegate Code Here
 }

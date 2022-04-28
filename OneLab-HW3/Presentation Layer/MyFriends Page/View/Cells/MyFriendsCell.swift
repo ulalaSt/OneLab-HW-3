@@ -10,9 +10,9 @@ import SnapKit
 
 //MARK: - Each collectionView cell has image, name, position(job), status icon. Just adding them.
 
-class MyFriendsCollectionViewCell: UICollectionViewCell {
+class MyFriendsCell: UICollectionViewCell {
     
-    static var identifier = "MyFriendsCollectionViewCell"
+    static var identifier = "MyFriendsCell"
     
     private let userImageView: UIImageView = {
         let userImageView = UIImageView()
@@ -51,44 +51,43 @@ class MyFriendsCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = UIColor.whiteToBlack
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 15
+        layout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    private func layout(){
         contentView.addSubview(userImageView)
-        userImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(16)
-            make.centerX.equalToSuperview()
-            make.height.equalToSuperview().dividedBy(2)
-            make.width.equalTo(userImageView.snp.height)
+        userImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(16)
+            $0.centerX.equalToSuperview()
+            $0.height.equalToSuperview().dividedBy(2)
+            $0.width.equalTo(userImageView.snp.height)
         }
         
         contentView.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(userImageView.snp.bottom).offset(15)
-            make.centerX.equalToSuperview()
+        stackView.snp.makeConstraints {
+            $0.top.equalTo(userImageView.snp.bottom).offset(15)
+            $0.centerX.equalToSuperview()
         }
         
         stackView.addArrangedSubview(userStatusIcon)
-        userStatusIcon.snp.makeConstraints { make in
-            make.size.equalTo(10)
+        userStatusIcon.snp.makeConstraints {
+            $0.size.equalTo(10)
         }
         
         stackView.addArrangedSubview(userNameLabel)
-        userNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(userImageView.snp.bottom).offset(15)
+        userNameLabel.snp.makeConstraints {
+            $0.top.equalTo(userImageView.snp.bottom).offset(15)
         }
         
         contentView.addSubview(userPositionLabel)
-        userPositionLabel.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(4)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.lessThanOrEqualToSuperview()
+        userPositionLabel.snp.makeConstraints {
+            $0.top.equalTo(userNameLabel.snp.bottom).offset(4)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.lessThanOrEqualToSuperview()
         }
         
         DispatchQueue.main.async {
@@ -96,6 +95,7 @@ class MyFriendsCollectionViewCell: UICollectionViewCell {
             self.userStatusIcon.layer.cornerRadius = self.userStatusIcon.frame.height/2
         }
     }
+    
     public func configure(user: User) {
         userNameLabel.text = user.name
         userPositionLabel.text = user.position

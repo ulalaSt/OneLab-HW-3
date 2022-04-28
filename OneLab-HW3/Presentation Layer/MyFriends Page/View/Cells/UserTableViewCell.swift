@@ -62,42 +62,49 @@ class UserTableViewCell: UITableViewCell {
         return addIcon
     }()
     
-    override func layoutSubviews() {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor.clear.withAlphaComponent(0)
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func layout() {
         contentView.addSubview(userImageView)
-        userImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
-            make.centerY.equalToSuperview()
-            make.size.equalTo(contentView.snp.height).dividedBy(1.5)
+        userImageView.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.centerY.equalToSuperview()
+            $0.size.equalTo(contentView.snp.height).dividedBy(1.5)
         }
         contentView.addSubview(userStatusIcon)
-        userStatusIcon.snp.makeConstraints { make in
-            make.size.equalTo(userImageView).dividedBy(2.5)
-            make.bottom.trailing.equalTo(userImageView)
+        userStatusIcon.snp.makeConstraints {
+            $0.size.equalTo(userImageView).dividedBy(2.5)
+            $0.bottom.trailing.equalTo(userImageView)
         }
         contentView.addSubview(userNickname)
-        userNickname.snp.makeConstraints { make in
-            make.top.equalTo(userImageView)
-            make.leading.equalTo(userImageView.snp.trailing).offset(12)
-            make.height.equalTo(userImageView).dividedBy(2)
+        userNickname.snp.makeConstraints {
+            $0.top.equalTo(userImageView)
+            $0.leading.equalTo(userImageView.snp.trailing).offset(12)
+            $0.height.equalTo(userImageView).dividedBy(2)
         }
         contentView.addSubview(userFriendsLabel)
-        userFriendsLabel.snp.makeConstraints { make in
-            make.leading.equalTo(userNickname)
-            make.top.equalTo(userNickname.snp.bottom)
-            make.bottom.equalTo(userImageView)
+        userFriendsLabel.snp.makeConstraints {
+            $0.leading.equalTo(userNickname)
+            $0.top.equalTo(userNickname.snp.bottom)
+            $0.bottom.equalTo(userImageView)
         }
         contentView.addSubview(addToFriendsButton)
-        addToFriendsButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(16)
-            make.centerY.equalToSuperview()
+        addToFriendsButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(16)
+            $0.centerY.equalToSuperview()
         }
-        
         addToFriendsButton.addArrangedSubview(addIcon)
-        addIcon.snp.makeConstraints { make in
-            make.size.equalTo(14)
-            make.bottom.top.equalToSuperview().inset(10)
+        addIcon.snp.makeConstraints {
+            $0.size.equalTo(14)
+            $0.bottom.top.equalToSuperview().inset(10)
         }
-        
         addToFriendsButton.addArrangedSubview(addLabel)
         addToFriendsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapAddToFriends)))
         
@@ -122,14 +129,12 @@ extension UserTableViewCell: SettableCell {
     static var heightOfCell: Double { 72 }
     
     func configure(with data: User) {
-        
         userNickname.text = data.nickName
         userImageView.image = UIImage(named: data.imageName)
         isAddedToFriends = data.isYourFriend
         updateAddToFriendsButton(data.isYourFriend)
         userStatusIcon.backgroundColor = .appropriateColor(of: data.status)
         userFriendsLabel.text = friendsLabelCreator(from: data.numberOfFriends)
-        
     }
     
     func updateAddToFriendsButton(_ isAdded: Bool){
